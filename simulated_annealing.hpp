@@ -31,13 +31,13 @@ auto random(double a, double b) -> double {
     return rand(rng);
 }
 
-auto simulated_annealing(const double a, const double b, const double t_min, double t_max, double f(double))
+auto simulated_annealing(const double a, const double b, const double t_min, double t_max, double func(double))
                                                 noexcept -> std::map<double,std::pair<double, double>> {
     std::map<double, std::pair<double, double>> result;
     auto x_min = random(a, b);
     while (t_max > t_min) {
         auto x_i = random(a, b);
-        auto difference = f(x_i) - f(x_min);
+        auto difference = func(x_i) - func(x_min);
         auto probability = 0.0;
         if (difference <= 0) {
             x_min = x_i;
@@ -50,7 +50,7 @@ auto simulated_annealing(const double a, const double b, const double t_min, dou
                 x_min = x_i;
             }
         }
-        result[t_max] = {x_min, f(x_min)};
+        result[t_max] = {x_min, func(x_min)};
         t_max *= 0.95;
     }
 

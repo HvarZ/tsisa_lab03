@@ -13,6 +13,6 @@ int main() {
     cout << "Функция y = x^2 * sin(x) * sin(5 * x)" << endl;
     cout << "Интервал [9, 12]" << endl;
     auto result_m = simulated_annealing(9, 12, 0.1, 10000, f_m);
-    print(result);
+    print(result_m);
     return 0;
 }

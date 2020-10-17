@@ -59,6 +59,7 @@ auto simulated_annealing(const double a, const double b, const double t_min, dou
 
 void print(const std::map<double, std::pair<double, double>>& result) noexcept {
     size_t counter = 0;
+
     cout << std::string(45, '-') << endl;
     cout << "|" << std::setw(10) << "N" << " |" << std::setw(10) << "T" << " |" << std::setw(10)
     << "x" << " |" << std::setw(8) << "f(x)" << endl;

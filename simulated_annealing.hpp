@@ -53,6 +53,7 @@ auto simulated_annealing(const double a, const double b, const double t_min, dou
         result[t_max] = {x_min, f(x_min)};
         t_max *= 0.95;
     }
+
     return result;
 }
 
